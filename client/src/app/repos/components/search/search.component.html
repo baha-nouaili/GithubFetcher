@@ -1,0 +1,7 @@
+<form class="search-form" (ngSubmit)="getRepos()">
+    <div class="form-control">
+        <label for="text">Github Account</label>
+        <input type="text" [(ngModel)]="user" name="user" placeholder="Search for a user.." />
+        <button class="btn">SEARCH</button>
+    </div>
+</form>
