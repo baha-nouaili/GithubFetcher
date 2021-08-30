@@ -1,3 +1,4 @@
-<div *ngFor="let repo of repos$ | async" >
-    <p>{{repo.id}}</p>
+<div *ngFor="let repo of repos$ | async">
+    <p>{{repo.name}}</p>
+    <a href={{repo.clone_url}}>View On github</a>
 </div>

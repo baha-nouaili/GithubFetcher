@@ -8,7 +8,7 @@ import { getRepos } from '../../store/repos.selector';
 @Component({
   selector: 'app-repos-list',
   templateUrl: './repos-list.component.html',
-  styleUrls: ['./repos-list.component.sass']
+  styleUrls: ['./repos-list.component.css']
 })
 export class ReposListComponent implements OnInit {
 
