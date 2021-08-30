@@ -1,4 +1,8 @@
-<div *ngFor="let repo of repos$ | async">
-    <p>{{repo.name}}</p>
-    <a href={{repo.clone_url}}>View On github</a>
+<div *ngFor="let repo of repos$ | async"  class="card" style="width: 20rem;
+display: -webkit-inline-box ;  margin: 8px;">
+    <div class="card-body">
+    <H4 class="card-title" >{{repo.name}}</H4>
+
+    <a href={{repo.clone_url}} class="btn btn-primary" >View On github</a>
+</div>
 </div>
