@@ -13,7 +13,14 @@ export class ServicesService {
   constructor(private http : HttpClient) { }
 
   getAllRepos(user:string):Observable<Repo[]>{
-    return this.http.get<Repo[]>(`https://api.github.com/users/${user}/repos`)
+    return this.http.get<Repo[]>(`http://localhost:3000/repo/${user}`)
   }
+
+
+  getOneRepo(id:string):Observable<Repo>{
+    return this.http.get<Repo>(`http://localhost:3000/repo/one/${id}`)
+  }
+
+
 
 }

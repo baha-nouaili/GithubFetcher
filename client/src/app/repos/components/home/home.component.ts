@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Repo } from '../../models/Repo.model';
 import { Store } from '@ngrx/store';
 import { FetchUserRepos } from '../../store/repos.actions';
 

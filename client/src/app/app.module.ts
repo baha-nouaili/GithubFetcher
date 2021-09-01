@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { ReposModule } from './repos/repos.module';
 import { reducers } from './reducers';
 
+import { AppRoutingModule } from './app-routing.module'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,8 @@ import { reducers } from './reducers';
     EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge : 25 
-    })
+    }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

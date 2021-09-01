@@ -1,5 +1,5 @@
 <div *ngFor="let repo of repos$ | async"  class="card" style="width: 20rem;
-display: -webkit-inline-box ;  margin: 8px;">
+display: -webkit-inline-box ;  margin: 8px;" (click)="onClickRepo(repo)" >
     <div class="card-body">
     <H4 class="card-title" >{{repo.name}}</H4>
 

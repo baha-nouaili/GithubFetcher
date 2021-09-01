@@ -12,6 +12,8 @@ import { SearchComponent } from './components/search/search.component';
 import { ReposEffects } from './store/repos.effects';
 import { reducerRepo } from './store/repos.reducers';
 import { environment } from 'src/environments/environment';
+import { RepoComponent } from './components/repo/repo.component';
+import { Router } from '@angular/router';
 
 
 
@@ -20,17 +22,19 @@ import { environment } from 'src/environments/environment';
   declarations: [
     HomeComponent,
     ReposListComponent,
-    SearchComponent
+    SearchComponent,
+    RepoComponent
   ],
   exports : [
-    HomeComponent
+    HomeComponent,
+    RepoComponent
   ],
   imports: [
     CommonModule,
     FormsModule, 
     HttpClientModule,
     EffectsModule.forFeature([ReposEffects]),
-    StoreModule.forFeature('repos',reducerRepo), StoreDevtoolsModule.instrument({maxAge : 25 , logOnly : environment.production})
+    StoreModule.forFeature('repos',reducerRepo), StoreDevtoolsModule.instrument({maxAge : 25 , logOnly : environment.production}),
   ], 
   providers : []
 })

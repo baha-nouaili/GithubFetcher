@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { Router, ActivatedRoute, ParamMap , NavigationExtras } from '@angular/router'
+
 import { Repo } from '../../models/Repo.model';
 import { ReposState  } from '../../store/repos.state';
 import { getRepos } from '../../store/repos.selector';
@@ -12,13 +14,16 @@ import { getRepos } from '../../store/repos.selector';
 })
 export class ReposListComponent implements OnInit {
 
-  constructor(private store : Store<{ repos : ReposState  }>) { }
+  constructor(private store : Store<{ repos : ReposState  }> , private route : Router) { }
 
 
   repos$!: Observable<Repo[]> 
 
   ngOnInit(): void {
     this.repos$ = this.store.select(getRepos)
+  }
+  onClickRepo(repo:Repo){
+    this.route.navigateByUrl(`/${repo.id}`)
   }
 
 }
